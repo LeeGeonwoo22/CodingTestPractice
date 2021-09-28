@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div>
+            <div>
+                길이가 서로 다른 A,B,C 세개의 막대 길이가 주어지면 이 세 막대로 삼각형을 만들 수 있으면
+                "YES"를 출력, 만들수없으면 "NO"를 출력한다. 
+            </div>
+            <div class ="hint">
+                입력설명
+            </div>
+            <div class ="content">
+                최소값 구하는 방식을 복습하기 위해 만든 문제. 
+                이등변 삼각형을 생각하면됨. (두 막대 길이의 합이 가장긴 막대 길이보다 커야함)
+                첫번째 줄에서 100이하의 서로다른 A,B,C 막대의 길이가 주어진다.
+            </div>
+            <div class ="hint">
+                출력설명
+            </div>
+            <div class ="content">
+                첫 번째 줄에 "YES", "NO"를 출력한다. 
+            </div>
+        </div>
+        <script>
+            function solution(a, b, c){
+                // 가장 긴 막대의 길이
+                let answer="YES", max;
+                // 세 수의 합. 
+                let sum=a+b+c;
+                // 세수의 가장 작은값을 a에 넣는다.
+                if(a>b) max=a;
+                // 그렇지 않으면 max에 b를 넣는다.
+                else max=b;
+                // max가 c보다 작다면 c를 max에 넣어줌
+                if(c>max) max=c;
+                // 세 수의 합과 나머지 짧은 막대의 합을 뺀다.
+                // 그것이 맥스보다 작거나 같다면? No를 할당.
+                if(sum-max<=max) answer="NO"; 
+                return answer;
+            }
+
+            console.log(solution(6, 7, 11));
+        </script>
+    </body>
+</html>
