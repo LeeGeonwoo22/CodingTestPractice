@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div>
+            <div>
+                7개의 자연수가 주어질 때, 이들 중 홀수인 자연수들을 모두 골라 그 합을 구하고, <br>
+                고른 홀수들중 최소값을 찾는 프로그램을 작성하세요.
+                <br>
+                <br>
+                예를 들어, 7개의 자연수 12, 77, 38, 41, 53, 92, 85가 주어지면 <br>
+                이들 중 홀수는 77,41,53,85이므로 그 합은 '256' 이 된다.
+                <br>
+                <br>
+                그리고 최소값은 41이된다. (41 < 53 < 77 < 85)
+                <br>
+                <br>
+            </div>
+
+            <div class ="hint">
+                입력설명
+            </div>
+            <div class ="content">
+                첫번째 줄에 7개의 수가 주어진다
+            </div>
+            <div class ="hint">
+                출력설명
+            </div>
+            <div class ="content">
+                첫번째 줄에 가장 작은 값을 출력한다.
+            </div>
+        </div>
+        <script>
+            function solution(arr){
+                // let answer, min=Number.MAX_SAFE_INTEGER;
+                // console.log(min);
+                // for(let i = 0 ; i < arr.length ; i++) {
+                //     if(arr[i]<min) min = arr[i];
+                // }
+                
+                // return answer;
+
+                let answer=Math.min(...arr);
+                console.log(Math.max(...arr));
+                return answer;
+            }
+            let arr = [5,7,1,3,2,9,11]
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>

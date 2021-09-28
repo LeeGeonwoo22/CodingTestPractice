@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div>
+            <div>
+                자연수 N이 입력되면 1부터 N까지의 합을 출력하는 프로그램을 작성하세요.
+            </div>
+            <div class ="hint">
+                입력설명
+            </div>
+            <div class ="content">
+                첫번째 줄에 20이하의 자연수 N이 입력된다.
+            </div>
+            <div class ="hint">
+                출력설명
+            </div>
+            <div class ="content">
+                첫 번째 줄에 1부터 N까지의 합을 출력한다.
+            </div>
+            <div>
+                1부터 6까지의 합을 구하기 때문에 반복문을 사용한다. 
+            </div>
+        </div>
+        <script>
+            function solution(n){
+                let answer=0;
+                for(let i = 0; i <=n ; i++) {
+                    answer =answer + i;
+                }
+                
+                return answer;
+            }
+
+            console.log(solution(10));
+        </script>
+    </body>
+</html>

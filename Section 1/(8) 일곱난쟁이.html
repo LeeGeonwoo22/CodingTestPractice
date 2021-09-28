@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div>
+            <div>
+                아홉개의 줄에 걸쳐 난쟁이들의 키가 주어진다.
+                <br>
+                주어지는 키는 100을 넘지않는 자연수 이며, 아홉난쟁이의 키는 모두 다르다.
+                <br>
+                가능한 정답이 여러가지인 경우는 아무거나 출력한다.
+                <br>
+                <br>
+            </div>
+            <div class ="hint">
+                입력설명
+            </div>
+            <div class ="content">
+                첫번째 줄에 7개의 수가 주어진다
+            </div>
+            <div class ="hint">
+                출력설명
+            </div>
+            <div class ="content">
+                첫번째 줄에 가장 작은 값을 출력한다.
+            </div>
+            <div class ="content">
+                이중 for문을 돌리면서 두개를 뽑아 다 해봐야한다. i가 arr[0] 일때, i가 arr[1]일때,
+                일일히 확인해야한다. 
+                <br>
+                아홉난쟁이키의 총합 - (arr[i] + arr[j]) 의 값이 '100'  이 되면
+                arr[i]와 arr[j] 가 가짜 난쟁이가된다.
+            </div>
+        </div>
+        <script>
+            function solution(arr){
+                let answer=arr;
+                // 9명의 키 총합 구하기
+                let sum=answer.reduce((a, b)=>a+b, 0);
+
+
+                for(let i=0; i<8; i++){
+                    // j는 i 뒷편부터 줘야하기에 i+1
+                    for(let j=i+1; j<9; j++){
+                        if((sum-(answer[i]+answer[j]))==100){
+                            answer.splice(j, 1);
+                            answer.splice(i, 1);
+                        }
+                    }
+                }
+                return answer;
+            }
+            
+            let arr=[20, 7, 23, 19, 10, 15, 25, 8, 13];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
